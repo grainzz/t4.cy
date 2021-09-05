@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.t4.cy.port.yjMapper">
+
+
+
+<insert id="portAutoFill" parameterType="String">
+	insert into PortInfo values (#{c_id}, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',' ',' ',' ',' ')
+</insert> 
+
+<update id="portupdate" parameterType="com.t4.cy.port.portInfo">
+	update PortInfo set p_textarea = #{p_textarea}, p_month1 = #{p_month1}, p_month2 = #{p_month2}, p_school = #{p_school}, p_major = #{p_major}, p_schoolInfo = #{p_schoolInfo}, p_selectBox1 = #{p_selectBox1}, p_selectBox2 = #{p_selectBox2}, p_licenDate = #{p_licenDate}, p_licenName = #{p_licenName}, p_skillname = #{p_skillname}, p_skillrange = #{p_skillrange}, p_hobby = #{p_hobby} where p_user=#{p_user}
+</update>	
+
+<select id="getinfo" resultType="com.t4.cy.port.portInfo">
+	select * from PortInfo where p_user=#{p_user}
+</select>
+
+<select id="getinfoByID" parameterType="String" resultType="com.t4.cy.port.portInfo">
+	select * from PortInfo where p_user = #{c_id}
+</select>
+
+<update id="resumeupdate" parameterType="com.t4.cy.port.resumeInfo">
+	update resume set r_txt1 = #{r_txt1}, r_txt2 = #{r_txt2}, r_txt3 = #{r_txt3}, r_txt4 = #{r_txt4}, r_txt5 = #{r_txt5} where r_user =#{r_user}
+</update>	
+
+<select id="getresumeinfo" resultType="com.t4.cy.port.resumeInfo">
+	select * from resume where r_user=#{r_user}
+</select>
+
+<insert id="resAutoFill" parameterType="String">
+	insert into resume values(#{c_id}, ' ', ' ', ' ', ' ', ' ')
+	
+</insert>
+
+</mapper>

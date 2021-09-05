@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.t4.cy.member.MemberMapper">
+	<insert id="join" parameterType="com.t4.cy.member.Member">
+		insert into cy_member
+		values(#{c_id},#{c_pw},#{c_name},#{c_minimi},#{c_gender},#{c_phone},#{c_birth},#{c_photo},0)
+	</insert>
+	
+
+	<select id="getMemberById" resultType="com.t4.cy.member.Member">
+		select * from cy_member
+		where c_id = #{c_id}
+	</select>
+	
+	<select id="idCheck" resultType="int">
+		select count(*) from cy_member where c_id = #{c_id}
+	</select>
+	
+
+	<update id="update" parameterType="com.t4.cy.member.Member">
+		update cy_member
+		set c_pw =
+		#{c_pw}, c_name = #{c_name}, c_phone = #{c_phone}, 
+		c_birth = #{c_birth}, c_photo = #{c_photo}
+		where c_id = #{c_id}
+	</update>
+
+<delete id="bye" parameterType="com.t4.cy.member.Member">
+		delete from cy_member where
+		c_id = #{c_id}
+	</delete>
+
+
+
+
+</mapper>

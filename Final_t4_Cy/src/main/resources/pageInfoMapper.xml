@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.t4.cy.pageInfo.PageInfoMapper">
+
+<insert id="defaultAutoFill" parameterType="com.t4.cy.member.Member">
+	insert into cy_pageInfo values(#{c_id}, #{c_name}, #{c_birth}, #{c_photo}, null, null, 'default', null, null, null, null)
+</insert>
+
+<select id="getPageInfoById" parameterType="String" resultType="com.t4.cy.PageInfoVO">
+	select * from cy_pageInfo where p_id = #{c_id}
+</select>
+
+<update id="update" parameterType="com.t4.cy.PageInfoVO">
+	update cy_pageInfo set p_name=#{p_name}, p_birth=#{p_birth}, p_photo=#{p_photo} where p_id=#{p_id}
+</update>
+
+<delete id="byeById" parameterType="String">
+	delete from cy_pageInfo where p_id = #{id}
+</delete>
+
+<update id="setProfile" parameterType="com.t4.cy.PageInfoVO">
+	update cy_pageInfo set p_profile=#{p_profile}, p_email=#{p_email}, p_sns=#{p_sns}, p_state=#{p_state} where p_id=#{p_id}
+</update>
+
+</mapper>

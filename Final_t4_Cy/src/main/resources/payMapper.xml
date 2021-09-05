@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.t4.cy.pay.PayMapper">
+
+
+<select id="checkDotori" parameterType="String" resultType="int">
+	select c_dotori from cy_member where c_id=#{c_id}
+</select>
+
+<update id="updateDotori" parameterType="com.t4.cy.pay.Pay">
+	update cy_member set c_dotori = c_dotori + #{c_dotori} where c_id=#{c_id}
+</update>
+
+<update id="setMusic" parameterType="com.t4.cy.pay.Music">
+	update cy_pageInfo set p_music =#{m_music} where p_id=#{m_user}
+</update>
+
+<update id="setTheme" parameterType="com.t4.cy.pay.Music">
+	update cy_pageInfo set p_theme =#{m_music} where p_id=#{m_user}
+</update>
+
+<insert id="setMusicHistory" parameterType="com.t4.cy.pay.Music">
+	insert into bgm_history values (bgm_history_seq.nextval, #{m_user}, #{m_music}, sysdate)
+</insert>
+
+<insert id="setThemeHistory" parameterType="com.t4.cy.pay.Music">
+	insert into theme_history values (theme_history_seq.nextval, #{m_user}, #{m_music}, sysdate)
+</insert>
+
+<select id="checkHistoryBgm" parameterType="com.t4.cy.pay.Music" resultType="int">
+	select count(*) from bgm_history where bh_id=#{m_user} and bh_music = #{m_music}
+</select>
+
+<select id="checkHistoryTheme" parameterType="com.t4.cy.pay.Music" resultType="int">
+	select count(*) from theme_history where th_id=#{m_user} and th_theme = #{m_music}
+</select>
+
+<select id="getB_history" parameterType="String" resultType="com.t4.cy.pay.B_HistoryVO">
+	select * from bgm_history where bh_id = #{c_id} order by bh_date desc
+</select>
+
+<select id="getT_history" parameterType="String" resultType="com.t4.cy.pay.T_HistoryVO">
+	select * from theme_history where th_id = #{c_id} order by th_date desc
+</select>
+
+</mapper>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.t4.cy.comment.CommentMapper">
+
+
+	<select id="getAllmsg" resultType="com.t4.cy.comment.Comment"
+		parameterType="com.t4.cy.member.Member">
+		select * from cy_message, cy_member where c_id =
+		c_writer order by c_no desc
+	</select>
+
+	<select id="getAllmsg2" resultType="com.t4.cy.comment.Comment"
+		parameterType="com.t4.cy.comment.Comment">
+		select * from cy_message, cy_member where c_id =
+		c_writer order by c_no desc
+	</select>
+
+	<select id="getMsgs" resultType="com.t4.cy.comment.Comment">
+		select * from cy_message,
+		cy_member where c_id = c_writer and
+		c_no = #{c_no}
+	</select>
+
+
+
+	<insert id="writeMsg" parameterType="com.t4.cy.comment.Comment">
+		insert into cy_message
+		values(cy_message_seq.nextval,
+		#{c_writer}, #{c_guest_comment},
+		sysdate)
+	</insert>
+
+	<delete id="deleteMsg" parameterType="com.t4.cy.comment.Comment">
+		delete cy_message where
+		c_no = #{c_no}
+	</delete>
+
+	<update id="updateMsg" parameterType="com.t4.cy.comment.Comment">
+		update cy_message SET
+		c_guest_comment = #{c_guest_comment}
+		where c_no = #{c_no}
+	</update>
+
+
+	<select id="getAllMsgCount" resultType="java.lang.Integer">
+		select count(*) from
+		cy_member, cy_message where c_id = c_writer
+	</select>
+
+	<select id="getMsg"
+		parameterType="com.t4.cy.comment.CommentSelector"
+		resultType="com.t4.cy.comment.Comment">
+		
+	select *
+		from (
+		select rownum as rn, c_id, c_no, c_writer,
+		c_guest_comment, c_date, c_name, c_minimi
+		from(
+		select * from cy_message, cy_member
+		where c_id = c_writer and
+		c_name like '%'||#{search}||'%'
+		order by c_date desc
+
+		)
+		)
+	
+	</select>
+
+	<select id="getSearchMsgCnt" resultType="java.lang.Integer"
+		parameterType="com.t4.cy.comment.CommentSelector">
+		select count(*)
+		from cy_member, cy_message
+		where c_id =
+		c_writer and
+		c_name like
+		'%'||#{search}||'%'
+
+	</select>
+
+
+
+
+</mapper>

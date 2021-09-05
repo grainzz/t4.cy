@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+/*
+body {
+	font-family: 'Sunflower', sans-serif;
+	font-size: 12pt;
+	background-image: url('img/background.png');
+	background-color: #8f8f8f; 
+	color: black;
+	padding: 0;
+	margin: 0;
+	background-repeat: repeat-x;
+	resize: no;
+}
+
+button, input, textarea {
+		font-family: 'Sunflower', sans-serif;
+	font-size: 11pt;
+}
+
+td{
+		font-family: 'Sunflower', sans-serif;
+	font-size: 12pt;
+}
+*/
+
+@font-face {
+      src : url("resources/font/DungGeunMo.woff");
+      font-family: "dunggeunmo"
+
+}
+
+body {
+	font-family: "dunggeunmo";
+	font-size: 12pt;
+	background-image: url('img/background.png');
+	background-color: #d1b482; 
+	color: black;
+	padding: 0;
+	margin: 0;
+	background-repeat: repeat-x;
+	resize: no;
+}
+
+button, input, textarea {
+		font-family: "dunggeunmo";
+	font-size: 11pt;
+}
+
+td{
+		font-family: "dunggeunmo";
+	font-size: 12pt;
+}

@@ -1,0 +1,194 @@
+@charset "UTF-8";
+
+/* portfolioDetail.jsp */
+/* 
+
+#portTbl{
+width: 500px;
+height: 500px;	
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+table-layout:fixed;	테이블 크기 고정시키기
+background-color: #f3f4f5;
+border-top: thick;
+}*/
+
+/*
+#but{
+margin-left: auto;
+margin-right: auto;
+}
+
+#correctbut {
+	margin-left: auto;
+	margin-right: auto;
+}
+#correctbut button{
+	color: black;
+	background-color : white;
+ 	width: 70px;
+	height: 30px; 
+	margin-top: 10px;
+}
+
+#edit{
+margin-left: auto;
+margin-right: auto;
+margin-top: 80px;
+padding: 20px;
+}
+
+#edit button{
+	color: #676767;
+	background-color : #ffb9d3;
+	font-size:30pt;
+	width: 500px;
+	height: 500px;
+	outline: none;
+}
+
+#edit td{
+	padding: 20px;	
+}
+
+
+*/
+
+/* table.type07 {
+  border-collapse: collapse;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+}
+table.type07 thead {
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  background: #aac6ec;
+  table-layout: fixed;
+} 
+table.type07 thead th {
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: top;
+  color: #fff;
+}
+table.type07 td {
+  width: 350px;
+  padding: 10px;
+  vertical-align: top;
+  border-bottom: 1px solid #ccc;
+  background: #f0f0f0;
+} */
+
+table.type07 {
+  border-collapse: collapse;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+}
+table.type07 thead {
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+/*  background: #aac6ec;*/
+  background: #8bb7dd;
+  table-layout: fixed;
+} 
+table.type07 thead td {
+/*   padding: 10px;
+  font-weight: bold; */
+  vertical-align: top;
+  color: #fff;
+}
+
+table.type07 tbody td {
+  width: 350px;
+  padding: 10px;
+  vertical-align: top;
+  border-bottom: 1px solid #ccc;
+  background: #f0f0f0;
+}
+
+
+
+#school {
+	width: 100px;
+	height: 18px;
+	font-size: 10px;	
+}
+#major {
+	width: 100px;
+	height: 18px;
+	font-size: 10px;	
+}	
+
+#schoolInfo{
+	height: 18px;
+	font-size: 10px;	
+}
+
+.monthBox{
+	width: 100px;
+	font-size: 6px;
+}
+
+#selectBox1{
+	height: 19px;
+	width: 85px;
+	font-size: 6px;
+}
+#selectBox2{
+	height: 19px;
+	width: 85px;
+	font-size: 6px;
+}
+#licenDate{
+	width: 99px;
+	font-size: 6px;
+}
+#licenName{
+	height: 12px;
+	width: 65px;
+	font-size: 6px;	
+}
+
+#skillname{
+	width: 80px;
+	font-size: 6px;
+}
+#skillLevel{
+	width: 70px;
+	font-size: 6px;
+}
+#hobby{
+	width: 90px;
+	font-size: 6px;
+}
+/*
+input[type=range]{ 
+    cursor: pointer;
+    
+}
+
+input[type=range] {
+  box-shadow: 1px 1px 2px #A6A6A6;
+  border: 2px solid #F27B7F;
+  border-radius: 40px;
+  background: #FF96AB;
+  cursor: pointer;
+}
+
+ */
+
+
+
+
+
+/* main.jsp */
+#main_school{	
+	font-size: 14px;
+}
+#main_skill{
+	font-size: 14px;
+}
+#main_skill_Lev{
+	width: 70px;
+}

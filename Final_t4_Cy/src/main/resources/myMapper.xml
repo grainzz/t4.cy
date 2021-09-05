@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.t4.cy.board.MyMapper">
+
+<!-- p_id의 전체 게시물 가져오기  -->
+<select id="showBoard" resultType="com.t4.cy.board.Board" parameterType="String">
+select * from board where b_writer=#{p_id} order by b_date desc
+</select>
+
+<select id="showAllBoard" resultType="com.t4.cy.board.Board">
+select * from board order by b_date desc
+</select>
+
+
+
+<insert id="regBoard" parameterType="com.t4.cy.board.Board"> 
+insert into board values (board_seq.nextval, #{b_title}, #{b_content}, #{b_writer}, 0, sysdate)
+</insert>
+
+<!-- 삭제 -->
+<delete id="delBoard" parameterType="com.t4.cy.board.Board">
+delete from board where b_no = #{b_no}
+</delete>
+
+<select id="showDetail" resultType="com.t4.cy.board.Board">
+	select * from board where b_no = #{b_no}
+</select>
+
+<update id="updateHit" parameterType="com.t4.cy.board.Board">
+	update board set b_hit = b_hit+1 where b_no = #{b_no}
+</update>
+
+
+<!-- 수정  -->
+<update id="modBoard" parameterType="com.t4.cy.board.Board">
+	update board set b_title = #{b_title}, b_content = #{b_content}  where b_no = #{b_no}
+</update>
+
+
+
+<!-- 게시글에 댓글 다는 거
+<insert id="writecomment" parameterType="">
+insert into comment values (comment_seq.nextval, #{c_id}, #{c_comment}, sysdate, #{c_writer})
+</insert> -->
+
+
+
+<!--  조회수 올리기
+<update id="updatehit" parameterType="int">
+	update board set b_hit = b_hit + 1 where b_no = #{b_no}
+</update> -->
+
+
+
+
+
+</mapper>

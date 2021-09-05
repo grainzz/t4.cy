@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+/* table{
+	padding: 10px;	테이블이랑 박스들의 간격
+}
+ */
+
+#resumeTbl{
+width: 100%;
+margin-left: auto;
+margin-right: auto;
+text-align: center; 
+table-layout:fixed;	/*테이블 크기 고정시키기*/
+padding: 15px;
+}
+
+#t1{
+	background-color: #8bb7dd;
+ 	border-radius: 4px; 
+	color: white;
+}
+
+.que:first-child{
+    border-top: 1px solid black;
+  }
+  
+.que{
+  position: relative;
+  padding: 13px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #dddddd;
+  
+}
+  
+.que::before{
+  display: inline-block;
+/*   content: '▼'; */
+  font-size: 14px;
+  color: #8bb7dd;
+  margin-right: 5px;
+}
+
+.que.on>span{
+  font-weight: bold;
+}
+  
+.anw {
+  display: none;
+    overflow: hidden;
+  background-color: #f4f4f2;
+  padding: 17px 0;
+  vertical-align: middle;
+}
+  
+.anw::before {
+  display: inline-block;
+/*   content: 'A'; */
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+  margin-right: 5px;
+}
+
+
+
+
+.doque:first-child{
+    border-top: 1px solid black;
+  }
+  
+.doque{
+  position: relative;
+  padding: 13px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #dddddd;
+  
+}
+  
+.doque::before{
+  display: inline-block;
+/*   content: '▼'; */
+  font-size: 14px;
+  color: #8bb7dd;
+  margin-right: 5px;
+}
+
+.doque.on>span{
+  font-weight: bold;
+  color: white;
+}
+  
+.doanw {
+  display: none;
+    overflow: hidden;
+  background-color: #f4f4f2;
+  padding: 17px 0;
+  vertical-align: middle;
+}
+  
+.doanw::before {
+  display: inline-block;
+/*   content: 'A'; */
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+  margin-right: 5px;
+}
